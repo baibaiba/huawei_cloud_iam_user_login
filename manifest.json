@@ -1,0 +1,52 @@
+{
+  "name": "Huawei Cloud IAM One Click Login",
+  "description": "配置账号密码，进行华为云IAM用户一键登录到控制台，解决浏览器无法记住密码、无法自动切换账号问题",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": "huawei_logo.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' http://localhost:* http://127.0.0.1:*; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://auth.huaweicloud.com/authui/login.html*"
+      ],
+      "js": [
+        "append_login_user_items.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js"
+      ],
+      "matches": [
+        "https://*.huaweicloud.com/*"
+      ],
+      "use_dynamic_url": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "host_permissions": [
+    "https://*.huawei.com/*",
+    "https://*.huaweicloud.com/*"
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "persistent": true
+  }
+}
