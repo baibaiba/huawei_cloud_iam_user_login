@@ -6,5 +6,6 @@
 效果预览
 <img width="1572" alt="企业微信截图_91e64efa-156d-4510-9388-d78a6363b970" src="https://github.com/user-attachments/assets/0f223735-8cdd-46c9-b38e-82d49f1c96c0" />
 ## 一键到达
-登陆成功后，可点击插件图标，提供常用链接一键到达；也可到options.html、popup.js文件（使用id关联）自定义快速到达链接
+登陆成功后，可点击插件图标，提供常用链接一键到达；
 <img width="154" alt="企业微信截图_726adaba-2137-4d72-814e-d8b6d17b305f" src="https://github.com/user-attachments/assets/bb987d36-b798-4971-b71a-8ec270004c81" />
+也可到options.html、popup.js文件（使用id关联）自定义快速到达链接
